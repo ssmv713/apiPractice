@@ -19,44 +19,6 @@ export type TableDataModel = {
   createdDate: string;
 };
 
-const rows: TableDataModel[] = [
-  {
-    id: "1",
-    name: "Frozen yoghurt",
-    gender: "female",
-    age: 24,
-    createdDate: "2023.03.04",
-  },
-  {
-    id: "2",
-    name: "Ice cream sandwich",
-    gender: "female",
-    age: 37,
-    createdDate: "2023.04.3",
-  },
-  {
-    id: "3",
-    name: "Eclair",
-    gender: "female",
-    age: 24,
-    createdDate: "2023.03.04",
-  },
-  {
-    id: "4",
-    name: "Cupcake",
-    gender: "female",
-    age: 67,
-    createdDate: "2023.03.04",
-  },
-  {
-    id: "5",
-    name: "Gingerbread",
-    gender: "female",
-    age: 49,
-    createdDate: "2023.03.04",
-  },
-];
-
 // =================================================================
 
 export type MemberListViewProps = {
