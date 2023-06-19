@@ -1,5 +1,5 @@
 export interface FetchPictureDto {
-  id: string;
+  id: number;
   author: string;
   width: number;
   height: number;

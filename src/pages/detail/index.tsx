@@ -1,21 +1,27 @@
 import { useRouter } from 'next/router';
 
 import { TermFormModel } from '@/apps/terms/common/components/TermsForm';
+import {
+  useFetchPicture,
+} from '@/apps/terms/detail/infra/hooks/use-fetch-picture';
 import { DetailView } from '@/apps/terms/detail/views/DetailView';
 
 const DetailPage = () => {
   const router = useRouter();
+  const termId = router.query.id ?? 0;
 
-  const termId = router.query.id;
-  if (!termId) return <></>;
+  const r = useFetchPicture(+termId);
+  const resultData = r.data?.data;
 
-  const formModel: TermFormModel = {
-    title: "제목입니다",
-    content: "내용입니다. ",
+  if (!termId || !resultData) return <></>;
+
+  const model: TermFormModel = {
+    title: resultData.author,
+    content: resultData.url,
     isRequired: true,
   };
 
-  return <DetailView termId={+termId} formModel={formModel} />;
+  return <DetailView termId={+termId} formModel={model} />;
 };
 
 export default DetailPage;

@@ -1,5 +1,4 @@
 import { useFetchPicture } from '@/apps/picture/hooks/use-fetch-picture';
-import { PictureView } from '@/apps/picture/views/PictureView';
 
 const PicturePage = () => {
   const r = useFetchPicture({
@@ -9,8 +8,7 @@ const PicturePage = () => {
 
   const resultData = r.data?.data;
 
-  console.log(resultData);
-  return <PictureView />;
+  return <>{/* <PictureView /> */}</>;
 };
 
 export default PicturePage;

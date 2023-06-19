@@ -7,7 +7,7 @@ const PersonPage = () => {
     results: 10,
   });
   const resultData = r.data?.data;
-  console.log(resultData);
+
   return <PersonView />;
 };
 

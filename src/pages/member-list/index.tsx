@@ -17,17 +17,6 @@ export default MemberListPage;
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 const useFetchMemberListViewModels = () => {
   const r = useFetchMemberList2({

@@ -26,8 +26,6 @@ export type MemberListViewProps = {
 };
 
 export const MemberListView = ({ models }: MemberListViewProps) => {
-  console.log(models);
-
   return (
     <div css={st.root}>
       <Stack direction="row" css={st.top_row}>

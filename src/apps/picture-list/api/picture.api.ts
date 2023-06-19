@@ -6,10 +6,17 @@ import { FetchPictureQuery } from '../dto/fetch-picture.query';
 const API_ORIGIN = "https://picsum.photos/";
 
 export class PictureApi {
-  static fetchPicture(
+  static fetchPictures(
     query: FetchPictureQuery
-  ): Promise<AxiosResponse<FetchPictureDto>> {
+  ): Promise<AxiosResponse<FetchPictureDto[]>> {
     const path = `${API_ORIGIN}v2/list/`;
-    return axios.get(path, { params: query });
+
+    return axios.get(path, { params: { ...query, seed: "foobar" } });
+  }
+
+  static fetchPicture(id: number): Promise<AxiosResponse<FetchPictureDto>> {
+    const path = `${API_ORIGIN}id/${id}/info`;
+
+    return axios.get(path);
   }
 }
