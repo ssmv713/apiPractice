@@ -61,6 +61,9 @@ export const TermsForm = ({
           label="제목"
           value={title}
           onChange={(e) => handleTitleChange(e.target.value)}
+          InputProps={{
+            readOnly: isReadOnly,
+          }}
         />
         <TextField
           label="내용"
@@ -68,10 +71,14 @@ export const TermsForm = ({
           rows={4}
           value={content}
           onChange={(e) => handleContentChange(e.target.value)}
+          InputProps={{
+            readOnly: isReadOnly,
+          }}
         />
         <Stack direction="row" css={st.checkbox_row}>
           <p>필수여부 </p>{" "}
           <Checkbox
+            disabled={isReadOnly}
             checked={isRequired}
             onChange={(e) => handleIsClickedChange(e.target.checked)}
           />

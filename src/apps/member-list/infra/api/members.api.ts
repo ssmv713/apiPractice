@@ -18,6 +18,12 @@ export class MembersApi2 {
     });
   }
 
+  // static fetchMember(id: number): Promise<AxiosResponse<FetchMemberListDto>> {
+  //   const path = `${API_ORIGIN}/api/${id}`;
+
+  //   return axios.get(path);
+  // }
+
   // static createMember(
   //   query: FetchMemberListQuery
   // ): Promise<AxiosResponse<FetchMemberListDto>> {
