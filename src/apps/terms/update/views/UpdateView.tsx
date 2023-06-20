@@ -1,17 +1,19 @@
+import { useRouter } from 'next/router';
+
 import {
   TermFormModel,
   TermsForm,
 } from '../../common/components/TermsForm';
 
-const FakeFormModel: TermFormModel = {
-  title: "제목입니다",
-  content: "내용입니다. ",
-  isRequired: true,
+type UpdateViewProps = {
+  formModel: TermFormModel;
 };
 
-export const UpdateView = () => {
+export const UpdateView = ({ formModel }: UpdateViewProps) => {
+  const router = useRouter();
   const handleCancelClick = () => {
     alert("정말 취소하시겠습니까?");
+    router.push({ pathname: "/list" });
   };
   const handleSubmit = (fm: TermFormModel) => {
     alert(JSON.stringify(fm));
@@ -22,7 +24,7 @@ export const UpdateView = () => {
       isReadOnly={false}
       handleCancelClick={handleCancelClick}
       handleSubmit={handleSubmit}
-      defaultFormModel={FakeFormModel}
+      defaultFormModel={formModel}
     />
   );
 };

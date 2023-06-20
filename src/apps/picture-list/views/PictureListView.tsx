@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import { css } from '@emotion/react';
@@ -31,7 +32,9 @@ export const PictureListView = ({ models }: PictureViewProps) => {
   return (
     <div css={st.root}>
       <Stack direction="row" css={st.button_row}>
-        <FilledButton>{"생성하기"}</FilledButton>
+        <Link href="/create">
+          <FilledButton>{"생성하기"}</FilledButton>
+        </Link>
       </Stack>
       <TableContainer>
         <Table>
@@ -44,7 +47,11 @@ export const PictureListView = ({ models }: PictureViewProps) => {
           </TableHead>
           <TableBody>
             {models.map((it, index) => (
-              <TableRow key={index} onClick={() => handleTableRowClick(it.id)}>
+              <TableRow
+                css={st.list_row}
+                key={index}
+                onClick={() => handleTableRowClick(it.id)}
+              >
                 <TableCell>{it.id}</TableCell>
                 <TableCell>{it.name}</TableCell>
                 <TableCell>{it.content}</TableCell>
@@ -71,6 +78,9 @@ const st = {
   `,
   table_head: css`
     background: #ccc;
+  `,
+  list_row: css`
+    cursor: pointer;
   `,
   pagination: css`
     margin-top: 20px;

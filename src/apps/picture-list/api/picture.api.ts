@@ -19,4 +19,9 @@ export class PictureApi {
 
     return axios.get(path);
   }
+
+  static updatePicture(id: number): Promise<AxiosResponse<FetchPictureDto>> {
+    const path = `${API_ORIGIN}id/${id}/info`;
+    return axios.put(path);
+  }
 }
